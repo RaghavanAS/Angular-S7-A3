@@ -1,0 +1,25 @@
+<!-- Table to display the student list -->
+<h1 [ngStyle]={align:center}>Student Details</h1>
+<table class="table">
+        <thead>
+          <tr>
+            <th>S.NO</th>
+            <th>Name</th>
+            <th>Roll_No</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Day Scholar</th>
+          </tr>
+        </thead>
+  <tbody>
+    <!-- iterating through the student list and changing the color based on the index -->
+    <tr *ngFor="let student of studentList;let i = index" [attr.data-index]="i"  appChangeColor [indexVal]=i>
+      <td>{{i+1}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.roll_number}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.gender}}</td>
+      <td>{{student.isDayScholar}}</td>
+    </tr>
+  </tbody>
+</table>
